@@ -34,7 +34,7 @@ const shoppingCartApi = {
     // TODO (lec): add token to header and send request with fetch, then save the file
     // instead of passing as query param
     getExportCsvUrl(pageId, startDate, endDate, token) {
-        let url = `${API_ROOT}/shopping-carts/export&dateStart=${startDate}&dateEnd=${endDate}&token=${token}`;
+        let url = `${API_ROOT}/shopping-carts/export?dateStart=${startDate}&dateEnd=${endDate}&token=${token}`;
         if (pageId) url += `&pageId=${pageId}`;
         return url;
     }

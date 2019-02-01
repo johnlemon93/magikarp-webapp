@@ -14,10 +14,9 @@ class Admin extends Component {
     this.state = {
       startDate: moment(),
       endDate: moment(),
-      selectedPageId: '',
+      selectedPageId: null,
       loading: false,
-      pages: [],
-      pageId: null
+      pages: []
     };
 
     this.onChange = this.onChange.bind(this);
@@ -51,7 +50,7 @@ class Admin extends Component {
   }
 
   onPageChange(value) {
-    this.setState({ pageId: value });
+    this.setState({ selectedPageId: value });
   }
 
   render() {
