@@ -42,11 +42,10 @@ class Admin extends Component {
   }
 
   onClick() {
-    const format = "YYYY-MM-DD";
     const { startDate, endDate, selectedPageId: pageId } = this.state;
     const link = document.createElement('a');
     link.target = '_blank';
-    link.href = ShoppingCartApi.getExportCsvUrl(pageId, startDate.format(format), endDate.format(format));
+    link.href = ShoppingCartApi.getExportCsvUrl(pageId, startDate.toISOString(), endDate.toISOString());
     link.click();
   }
 
