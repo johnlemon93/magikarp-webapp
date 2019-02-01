@@ -16,7 +16,8 @@ class Admin extends Component {
       endDate: moment(),
       selectedPageId: '',
       loading: false,
-      pages: []
+      pages: [],
+      pageId: null
     };
 
     this.onChange = this.onChange.bind(this);
