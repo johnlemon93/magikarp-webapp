@@ -1,0 +1,17 @@
+.product-layout {
+    .content {
+        margin-top: 50px;
+        display: flex;
+        min-height: 600px;
+        flex-direction: column;
+        >*:not(:last-child) {
+            flex: 1 1 auto;
+            margin-bottom: 8px;
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+    .ant-back-top {
+        background-color: transparent;
+    }
+}

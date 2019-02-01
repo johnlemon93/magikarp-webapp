@@ -1,0 +1,20 @@
+.download-order-list-form {
+  width: 100%;
+  >* {
+    display: flex;
+    margin-bottom: 15px;
+    >* {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.login-form {
+  flex: 1 1 auto;
+  max-width: 400px;
+}
+
+.login-form-button {
+  width: 100%;
+  font-size: small;
+}

@@ -1,0 +1,27 @@
+.common-layout {
+  position: relative;
+  margin-left: 20%;
+  max-width: 60%;
+  @media (max-width: 800px) {
+    margin-left: 0;
+    max-width: 800px;
+  }
+  .ant-layout-header {
+    padding: 0 15px;
+    text-align: center;
+    background-color: #0c5416;
+    width: 100%;
+    position: relative;
+  }
+  .content {
+    margin-top: 50px;
+    padding: 0 15px;
+    min-height: 600px;
+    display: flex;
+    min-height: 600px;
+    justify-content: center;
+  }
+  .ant-back-top {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,13 @@
+.ant-carousel {
+    .slick-slide {
+        text-align: left;
+        width: 100%;
+    }
+    .slick-dots {
+        bottom: 4px;
+        li button,
+        li.slick-active button {
+            background: #0c5416;
+        }
+    }
+}
