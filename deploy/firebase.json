@@ -5,6 +5,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "predeploy": [
+      "echo \"PREDEPLOY\"",
+      "cp -a ../build/. public/"
     ]
   }
 }
