@@ -82,8 +82,8 @@ class Home extends Component {
         const result = await ShoppingCartApi.create(pageId, psId, cartItems, deliveryInfo);
         if (result.success) {
             // close webview
-            message.success("Đơn hàng đã được gửi đi.\nTin nhắn xác nhận sẽ được gửi vào inbox của bạn trong giây lát.", 2, () => {
-                window.location.href = "https://www.messenger.com/closeWindow/";
+            message.success("Đơn hàng đã được gửi đi.\nBạn có thể đóng cửa sổ này!", 2, () => {
+                // window.location.href = `https://m.me/${pageId}`;
             });
         } else {
             message.error("Có lỗi xảy ra! Vui lòng thử lại!");

@@ -8,7 +8,25 @@
     ],
     "predeploy": [
       "echo \"PREDEPLOY\"",
+      "cp public/404.html ../build/404.html",
+      "cp public/favicon.ico ../build/favicon.html",
+      "rm -rf public && mkdir public",
       "cp -a ../build/. public/"
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Frame-Options",
+            "value": "ALLOW-FROM https://www.messenger.com/"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "frame-ancestors https://www.messenger.com/"
+          }
+        ]
+      }
     ]
   }
 }
