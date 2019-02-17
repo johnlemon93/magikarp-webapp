@@ -9,7 +9,7 @@
     "predeploy": [
       "echo \"PREDEPLOY\"",
       "cp public/404.html ../build/404.html",
-      "cp public/favicon.ico ../build/favicon.html",
+      "cp public/favicon.ico ../build/favicon.ico",
       "rm -rf public && mkdir public",
       "cp -a ../build/. public/"
     ],
@@ -22,8 +22,16 @@
             "value": "ALLOW-FROM https://www.messenger.com/"
           },
           {
+            "key": "X-Frame-Options",
+            "value": "ALLOW-FROM https://www.facebook.com/"
+          },
+          {
             "key": "Content-Security-Policy",
             "value": "frame-ancestors https://www.messenger.com/"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "frame-ancestors https://www.facebook.com/"
           }
         ]
       }

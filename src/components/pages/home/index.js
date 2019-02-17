@@ -83,7 +83,7 @@ class Home extends Component {
         if (result.success) {
             // close webview
             message.success("Đơn hàng đã được gửi đi.\nBạn có thể đóng cửa sổ này!", 2, () => {
-                // window.location.href = `https://m.me/${pageId}`;
+                window.closeWebview();
             });
         } else {
             message.error("Có lỗi xảy ra! Vui lòng thử lại!");
