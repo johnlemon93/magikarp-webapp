@@ -22,16 +22,8 @@
             "value": "ALLOW-FROM https://www.messenger.com/"
           },
           {
-            "key": "X-Frame-Options",
-            "value": "ALLOW-FROM https://www.facebook.com/"
-          },
-          {
             "key": "Content-Security-Policy",
             "value": "frame-ancestors https://www.messenger.com/"
-          },
-          {
-            "key": "Content-Security-Policy",
-            "value": "frame-ancestors https://www.facebook.com/"
           }
         ]
       }
