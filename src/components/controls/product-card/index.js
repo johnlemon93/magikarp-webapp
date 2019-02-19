@@ -21,10 +21,10 @@ class ProductCard extends Component {
         } = this.props;
 
         const availableSizes = sizes || [
-            { key: "S", label: "S " },
-            { key: "M", label: "M " },
-            { key: "L", label: "L " },
-            { key: "XL", label: "XL" }
+            { key: "M", label: "M" },
+            { key: "L", label: "L" },
+            { key: "XL", label: "XL" },
+            { key: "XXL", label: "XXL" },
         ];
 
         return (
