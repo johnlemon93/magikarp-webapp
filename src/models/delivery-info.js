@@ -40,11 +40,11 @@ class DeliveryInfo {
 
     static getPlaceHolder(fieldName) {
         return {
-            name: "Tên người nhận",
+            name: "Tên Facebook của bạn. VD: Ngân Nguyễn",
             phone: "Số điện thoại",
             city: "Tỉnh/Thành phố",
             district: "Quận/Huyện",
-            address: "Địa chỉ nhận hàng",
+            address: "Địa chỉ nhân hàng. VD: 15 Hoàng Diệu, Đà Nẵng",
             note: "Ghi chú thêm",
         }[fieldName];
     }
