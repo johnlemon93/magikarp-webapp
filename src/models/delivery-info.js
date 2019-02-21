@@ -44,7 +44,7 @@ class DeliveryInfo {
             phone: "Số điện thoại",
             city: "Tỉnh/Thành phố",
             district: "Quận/Huyện",
-            address: "Địa chỉ nhân hàng. VD: 15 Hoàng Diệu, Đà Nẵng",
+            address: "Địa chỉ. VD: 15 Hoàng Diệu, Đà Nẵng",
             note: "Ghi chú thêm",
         }[fieldName];
     }
