@@ -1,10 +1,11 @@
 class DeliveryInfo {
-    constructor(name = "", phone = "", city = "", district = "", address = "") {
+    constructor(name = "", phone = "", city = "", district = "", address = "", note = "") {
         this.name = name;
         this.phone = phone;
         this.city = city;
         this.district = district;
         this.address = address;
+        this.note = note;
     }
 
     static getFieldNames() {
@@ -13,7 +14,8 @@ class DeliveryInfo {
             "phone",
             "city",
             "district",
-            "address"
+            "address",
+            "note",
         ];
     }
 
@@ -42,7 +44,8 @@ class DeliveryInfo {
             phone: "Số điện thoại",
             city: "Tỉnh/Thành phố",
             district: "Quận/Huyện",
-            address: "Địa chỉ nhận hàng"
+            address: "Địa chỉ nhận hàng",
+            note: "Ghi chú thêm",
         }[fieldName];
     }
 }
