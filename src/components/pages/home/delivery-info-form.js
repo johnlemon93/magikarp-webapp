@@ -61,6 +61,7 @@ class DeliveryInfoForm extends Component {
                 onCancel={onClose}
                 destroyOnClose
             >
+                <label><b>* Để tránh thất lạc đơn hàng, vui lòng nhập <span style={{ "color": "red" }}>ĐÚNG CHÍNH TẢ</span> những thông tin dưới đây</b></label>
                 <form onSubmit={this.onSubmit}>
                     {
                         fieldNames.map(fieldName =>
