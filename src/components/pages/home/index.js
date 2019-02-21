@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button, message } from 'antd';
+import { Card, Button, Modal, message } from 'antd';
 import ProductLayout from '../../layout/product-layout';
 import ProductCard from '../../controls/product-card';
 import RichList from '../../controls/rich-list';
@@ -107,6 +107,14 @@ class Home extends Component {
         const totalQuantity = this.calculateTotalQuantity(this.state.productCartItems);
         if (totalQuantity < 2) {
             message.error("Đơn hàng không đủ số lượng! (yêu cầu: 2)");
+            return;
+        }
+        if (totalQuantity > 20) {
+            Modal.warning({
+                title: 'Bạn muốn mua sỉ?',
+                content: 'Nếu bạn mua số lượng trên 20 sản phẩm, vui lòng inbox số điện thoại cho page để nhân viên liên hệ sớm nhất với bạn!',
+                centered: true,
+            });
             return;
         }
         this.setState({ isDeliveryInfoFormVisible: true });
