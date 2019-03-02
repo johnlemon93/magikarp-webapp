@@ -1,0 +1,66 @@
+version: 2.1 # use CircleCI 2.1
+
+commands:
+  predeploy:
+    description: "Switch branch and base-env config file"
+    parameters:
+      stage:
+        type: string
+      branch:
+        type: string
+    steps:
+      - checkout
+      - run: 
+          name: switch branch and config file
+          command: git checkout << parameters.branch >> && cp config.<< parameters.stage >>.json config.json
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm
+          command: npm install && npm install firebase-tools -g
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: run build
+          command: npm run build
+
+jobs: # a collection of steps
+  deploy-staging:
+    docker: # run the steps with Docker
+      - image: circleci/node:10.15 # ...with this image as the primary container; this is where all `steps` will run
+    steps: # a collection of executable commands
+      - predeploy:
+          stage: staging
+          branch: master
+      - run:
+          name: Deploy Master to Firebase
+          command: cd deploy && firebase deploy --token=$FIREBASE_TOKEN --project $STAGING_FIREBASE_PROJECT_ID
+  deploy-production:
+    docker: # run the steps with Docker
+      - image: circleci/node:10.15 # ...with this image as the primary container; this is where all `steps` will run
+    steps: # a collection of executable commands
+      - predeploy:
+          stage: prod
+          branch: release
+      - run:
+          name: Deploy Release to Firebase
+          command: cd deploy && firebase deploy --token=$FIREBASE_TOKEN --project $PROD_FIREBASE_PROJECT_ID
+  
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - deploy-staging:
+          filters:
+            branches:
+              only: master
+      - deploy-production:
+          filters:
+            branches:
+              only: release
