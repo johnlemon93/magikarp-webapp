@@ -40,7 +40,7 @@ jobs: # a collection of steps
           branch: master
       - run:
           name: Deploy Master to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN --project $STAGING_FIREBASE_PROJECT_ID
+          command: cd deploy && firebase deploy --token=$FIREBASE_TOKEN --project $STAGING_FIREBASE_PROJECT_ID
   deploy-production:
     docker: # run the steps with Docker
       - image: circleci/node:10.15 # ...with this image as the primary container; this is where all `steps` will run
@@ -50,7 +50,7 @@ jobs: # a collection of steps
           branch: release
       - run:
           name: Deploy Release to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN --project $PROD_FIREBASE_PROJECT_ID
+          command: cd deploy && firebase deploy --token=$FIREBASE_TOKEN --project $PROD_FIREBASE_PROJECT_ID
   
 workflows:
   version: 2
