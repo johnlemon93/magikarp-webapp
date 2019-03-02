@@ -12,7 +12,7 @@ commands:
       - checkout
       - run: 
           name: switch branch and config file
-          command: git checkout << parameters.branch >> && cp config.<< parameters.stage >>.json config.json
+          command: git checkout << parameters.branch >> && cp config.<< parameters.stage >>.json ./src/config.json
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
