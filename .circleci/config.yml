@@ -28,7 +28,7 @@ commands:
             - ./node_modules
       - run:
           name: run build
-          command: npm run build
+          command: CI=false npm run build
 
 jobs: # a collection of steps
   deploy-staging:
