@@ -109,10 +109,10 @@ class Home extends Component {
             message.error("Đơn hàng không đủ số lượng! (yêu cầu: 2)");
             return;
         }
-        if (totalQuantity > 20) {
+        if (totalQuantity >= 20) {
             Modal.warning({
                 title: 'Bạn muốn mua sỉ?',
-                content: 'Nếu bạn mua số lượng trên 20 sản phẩm, vui lòng inbox số điện thoại cho page để nhân viên liên hệ sớm nhất với bạn!',
+                content: 'Nếu bạn mua số lượng từ 20 sản phẩm, vui lòng inbox số điện thoại cho page để nhân viên liên hệ sớm nhất với bạn!',
                 centered: true,
             });
             return;
