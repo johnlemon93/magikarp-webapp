@@ -22,7 +22,7 @@ class DeliveryInfoForm extends Component {
         const deliveryInfo = this.props.deliveryInfo;
         const validateError = DeliveryInfo.validate(deliveryInfo);
         if (validateError) {
-            message.error(validateError);
+            message.error(validateError, 0.7);
             return;
         }
 
