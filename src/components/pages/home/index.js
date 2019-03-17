@@ -105,8 +105,11 @@ class Home extends Component {
 
     handleOpenUserForm() {
         const totalQuantity = this.calculateTotalQuantity(this.state.productCartItems);
-        if (totalQuantity < 2) {
-            message.error("Đơn hàng không đủ số lượng! (yêu cầu: 2)");
+        const { priceSteps } = this.state;
+        const mininumQuantityRequired = ((priceSteps && priceSteps[0]) || {}).quantity;
+
+        if (totalQuantity < mininumQuantityRequired) {
+            message.error(`Đơn hàng không đủ số lượng! (yêu cầu: ${mininumQuantityRequired})`);
             return;
         }
         if (totalQuantity >= 20) {
