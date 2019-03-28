@@ -27,8 +27,8 @@ class DeliveryInfo {
         }
         const dausoViettel = ['032', '033', '034', '035', '036', '037', '038', '039', '086', '096', '097', '098'];
         const dausoMobifone = ['079', '077', '076', '078', '070', '089', '090', '093'];
-        const dausoVinafone = ['085', '083', '084', '081', '082', '056', '091', '094'];
-        const dausoOthers = ['058', '056', '092', '059'];
+        const dausoVinafone = ['088', '085', '083', '084', '081', '082', '056', '091', '094'];
+        const dausoOthers = ['058', '056', '092', '059', '099'];
         const allDauso = [...dausoViettel, ...dausoMobifone, ...dausoVinafone, ...dausoOthers];
 
         if (!allDauso.includes(phone.slice(0, 3))) {
