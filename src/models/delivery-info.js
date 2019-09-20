@@ -12,10 +12,7 @@ class DeliveryInfo {
         return [
             "name",
             "phone",
-            "city",
-            "district",
             "address",
-            "note",
         ];
     }
 
@@ -42,10 +39,7 @@ class DeliveryInfo {
         return {
             name: "Tên Facebook của bạn. VD: Ngân Nguyễn",
             phone: "Số điện thoại",
-            city: "Tỉnh/Thành phố",
-            district: "Quận/Huyện",
             address: "Địa chỉ. VD: 15 Hoàng Diệu, Đà Nẵng",
-            note: "Ghi chú thêm",
         }[fieldName];
     }
 }
