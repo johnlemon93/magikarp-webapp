@@ -170,7 +170,7 @@ class Home extends Component {
                 <div>
                     <span className="quantity">Số lượng: {totalQuantity}</span>
                     <span className="price">
-                        Tạm tính: {price} {price && shippingCost ? `(ship: ${shippingCost})` : ""}
+                        Tổng tiền: {price} {price && shippingCost ? `(ship: ${shippingCost})` : ""}
                     </span>
                 </div>
             </div>
