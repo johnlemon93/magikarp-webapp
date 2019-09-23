@@ -61,6 +61,7 @@
       >input {
         text-align: center;
         width: auto;
+        max-width: 40%;
         @media (max-width: 360px) {
           width: 35%;
         }

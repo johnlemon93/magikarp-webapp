@@ -165,19 +165,9 @@ class Home extends Component {
 
         const totalQuantity = this.calculateTotalQuantity(productCartItems);
         const price = this.calculatePrice(totalQuantity);
-        const header = (
-            <div className="header">
-                <div>
-                    <span className="quantity">Số lượng: {totalQuantity}</span>
-                    <span className="price">
-                        Tạm tính: {price} {price && shippingCost ? `(ship: ${shippingCost})` : ""}
-                    </span>
-                </div>
-            </div>
-        );
 
         return (
-            <ProductLayout header={header}>
+            <ProductLayout>
                 <Card className="product-list"
                     style={{ width: '100%' }}
                     actions={[
@@ -209,6 +199,17 @@ class Home extends Component {
                         onChange={this.handleDeliveryInfoChange}
                         onSubmit={this.handleDone}
                         onClose={this.handleCloseUserForm} />
+                    
+                    <div className="total-panel">
+                        <div className="total-panel-content">
+                            <div>
+                                <span className="quantity">Số lượng: {totalQuantity}</span>
+                                <span className="price">
+                                    Tổng tiền: {price} {price && shippingCost ? `(ship: ${shippingCost})` : ""}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </Card>
 
             </ProductLayout>
